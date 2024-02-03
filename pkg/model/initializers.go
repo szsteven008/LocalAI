@@ -84,7 +84,7 @@ func (ml *ModelLoader) grpcModel(backend string, o *Options) func(string, string
 		}
 
 		// Check if the backend is provided as external
-		if uri, ok := o.externalBackends[backend]; ok {
+		if uri, ok := o.externalBackends[modelName]; ok {
 			log.Debug().Msgf("Loading external backend: %s", uri)
 			// check if uri is a file or a address
 			if _, err := os.Stat(uri); err == nil {
